@@ -1,0 +1,7 @@
+Loaded the cleaned table into PostgreSQL and ran a progressive SQL analysis:
+
+Aggregation & filtering: zone workload totals, SKU diversity per zone, priority-tier workload distribution, outlier detection on sku_lines.
+Joins: normalized into orders, order_zone_workload, and zone_master tables; validated referential integrity (orphaned zones, unmatched records).
+Window functions: RANK()/DENSE_RANK() to rank zones by workload and complexity tier, SUM()/AVG() OVER (PARTITION BY ...) to compare each order's zone-level load against zone/order baselines, LAG()/LEAD() for day-over-day workload trends.
+CTEs: identified zones with above-average workload and orders in the top workload percentile.
+Key finding: separated exposure rate (how often a zone appears in a high-risk order) from causation rate (how often a zone is actually the reason an order became high-risk). The highest-traffic zone (305 bottleneck occurrences) had only a 2.3% causation rate, while a lower-traffic zone (FMCG_FOOD1) had a 31% causation rate — meaning raw congestion frequency is a misleading signal for where to intervene.
