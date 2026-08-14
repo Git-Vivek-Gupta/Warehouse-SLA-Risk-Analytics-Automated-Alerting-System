@@ -136,8 +136,13 @@ Combined causation rate, workload, and sample size (not a single blind metric) i
 Three-page dashboard built from four exported analytical CSVs (`order_completion`, `zone_recommendation`, `simulation_df`, `shap_summary`):
 
 - **Page 1 — Executive Operations Overview:** total orders, high-risk %, average completion time, daily completion trend, workload vs. capacity.
+- ![Dashboard Preview](Dashboard/Page 1.png)
+  
 - **Page 2 — Zone Performance:** zone workload Pareto, bottleneck frequency vs. high-risk causation rate, drill-down zone table.
+- ![Dashboard Preview](Dashboard/Page 2.png)
+  
 - **Page 3 — Order Risk:** SHAP driver chart, risk by priority/volume/weight bucket, predicted-risk distribution, top high-risk orders, live ROC-AUC KPI.
+ -  ![Dashboard Preview](Dashboard/Page 3.png)
 
 ### Phase 9 — Automated Alerting Workflow (n8n)
 Closes the loop from analysis to action:
