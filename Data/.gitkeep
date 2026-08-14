@@ -1,4 +1,4 @@
-	
 Source:	Swiggy warehouse-level picklist dataset (Kaggle, Dec 2025 hackathon export)
+Raw data : https://www.kaggle.com/datasets/abhaygupta619/swiggy-warehouse-level-picklist-optimization
 Cleaned intermediate table:zone_workload_clean.csv — 51,203 rows × 17 columns (order × zone grain)
   
